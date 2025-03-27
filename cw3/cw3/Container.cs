@@ -2,7 +2,7 @@
 
 public class Container
 {
-    private static int counter = 1;
+    private static int counter = 1; //dodatkowa zmienna do nadania numeru kontenerowi
     public string SerialNumber { get; set; }
     public double CargoMass { get; set; }
     public double Height { get; set; }
@@ -10,9 +10,9 @@ public class Container
     public double Depth { get; set; }
     public double MaxLoad { get; set; }
 
-    public Container(string serialNumber, double height, double ownWeight, double depth, double maxLoad)
+    public Container(string type, double maxLoad, double height, double ownWeight, double depth) //dodatkowa zmienna dla typu kontenera
     {
-        SerialNumber = $"KON-{type}-{counter++}";
+        SerialNumber = $"KON-{type}-{counter++}";//do nadania typu i numeru
         Height = height;
         OwnWeight = ownWeight;
         Depth = depth;
@@ -31,7 +31,7 @@ public class Container
         }
     }
 
-    public virtual void Unload()
+    public virtual void UnLoad()
     {
         CargoMass = 0;
     }
